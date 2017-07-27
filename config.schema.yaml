@@ -1,0 +1,12 @@
+---
+  template_user:
+    description: "Username for authenticating to Example service"
+    type: "string"
+    secret: false
+    required: true
+    default: "admin"
+  template_api_key:
+    description: "API Key for authenticating to Example service"
+    type: "string"
+    secret: true
+    required: true
