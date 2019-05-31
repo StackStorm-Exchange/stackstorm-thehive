@@ -22,9 +22,9 @@ class TheHiveTasksSearchSensor(PollingSensor):
 
         if response.status_code == 200:
             tasks = response.json()
-            self._logger.info('%d tasks found'%len(tasks))
+            self._logger.debug('%d tasks found'%len(tasks))
             for task in tasks:
-                self._logger.info('New task %s'%task['title'])
+                self._logger.debug('New task %s'%task['title'])
                 self._sensor_service.dispatch(trigger=self._trigger_ref, payload=task)
         else:
             self._logger.exception('TheHive sensor failed with status_code %d'%response.status_code)
