@@ -1,1 +1,1 @@
-# Place any required python libraries here. Will be installed into a pack specific virtualenv
+thehive4py==1.6.0

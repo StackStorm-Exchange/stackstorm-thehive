@@ -1,7 +1,11 @@
 ---
-ref: exchange_template
-name: exchange_template
-description: Exchange Template
+ref: thehive
+name: TheHive
+description: Connect to TheHive to automate alert qualification and tasks
+keywords:
+    - thehive
 version: 0.1.0
-author: Stanley
-email: info@stackstorm.com
+python_versions:
+  - "3"
+author: agix
+email: florian.gaultier@gmail.com
