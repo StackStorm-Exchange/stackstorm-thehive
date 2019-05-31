@@ -1,11 +1,12 @@
 from thehive4py.api import TheHiveApi
 from st2common.runners.base_action import Action
-from thehive4py.query import *
+from thehive4py.query import Eq
 from thehive4py.models import CaseTask
 
 __all__ = [
     'TakeTaskAction'
 ]
+
 
 class TakeTaskAction(Action):
     def run(self, task_id):
@@ -22,6 +23,6 @@ class TakeTaskAction(Action):
             else:
                 raise ValueError('[TakeTaskAction]: no tasks with this id')
         else:
-            raise ValueError('[TakeTaskAction]: status_code %d'%response.status_code)
+            raise ValueError('[TakeTaskAction]: status_code %d' % response.status_code)
 
         return True
