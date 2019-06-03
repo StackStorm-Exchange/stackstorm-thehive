@@ -1,0 +1,11 @@
+---
+ref: thehive
+name: TheHive
+description: Connect to TheHive to automate alert qualification and tasks
+keywords:
+    - thehive
+version: 0.1.0
+python_versions:
+  - "3"
+author: agix
+email: florian.gaultier@gmail.com

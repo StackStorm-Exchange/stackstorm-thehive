@@ -1,0 +1,15 @@
+---
+  name: "thehive_webhook"
+  pack: "thehive"
+  description: "Receive TheHive information from https://github.com/TheHive-Project/TheHiveDocs/blob/master/admin/webhooks.md"
+  enabled: false
+
+  trigger:
+    type: "core.st2.webhook"
+    parameters:
+      url: "thehive"
+
+  action:
+    ref: "thehive.new_action"
+    parameters:
+      action: "{{ trigger.body }}"

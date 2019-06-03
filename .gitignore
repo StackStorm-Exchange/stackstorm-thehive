@@ -96,3 +96,6 @@ ENV/
 *.sublime-project
 *.sublime-workspace# PyCharm
 .idea
+
+sensors/test.py
+flake8_config
