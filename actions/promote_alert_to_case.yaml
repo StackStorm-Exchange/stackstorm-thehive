@@ -1,0 +1,17 @@
+---
+  name: "promote_alert_to_case"
+  runner_type: "python-script"
+  description: "This promote TheHive alert to TheHive case"
+  enabled: true
+  entry_point: "promote_alert_to_case.py"
+  parameters:
+    alert_id:
+      type: "string"
+      description: "Alert Id to promote"
+      required: true
+      position: 0
+    case_template:
+      type: "string"
+      description: "Case Template Name to use"
+      required: false
+      position: 1

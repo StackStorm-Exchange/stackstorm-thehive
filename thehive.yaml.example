@@ -1,0 +1,4 @@
+---
+thehive_url: "{{st2kv.system.thehive_url}}"
+thehive_api_key: "{{st2kv.system.thehive_api_key}}"
+thehive_bot_username: "{{st2kv.system.thehive_bot_username}}"

@@ -1,0 +1,16 @@
+---
+  thehive_url:
+    description: "URL of TheHive"
+    type: "string"
+    secret: false
+    required: true
+  thehive_api_key:
+    description: "API Key for authenticating to TheHive"
+    type: "string"
+    secret: true
+    required: true
+  thehive_bot_username:
+    description: "Bot username to follow tasks"
+    type: "string"
+    secret: false
+    required: true
