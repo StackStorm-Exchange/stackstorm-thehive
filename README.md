@@ -1,19 +1,43 @@
-[![Exchange Template](https://exchange.stackstorm.org/assets/images/st2-logo.png)](https://exchange.stackstorm.org/)
+# TheHive pack for StackStorm
 
-# StackStorm Exchange Pack Template
-
-This is a basic template directory structure for a StackStorm Integration Pack.
+This is a bunch of actions to automate TheHive alerts/cases/jobs processing.
 
 ## How to Use
 
-1. Clone this repository, and rename the directory to your pack name.
-2. Edit `pack.yaml`. Make sure you set the pack name, the description, and add some meaningful
-   keywords.
-3. Add any Python dependencies to `requirements.txt`
-4. Edit `config.schema.yaml`. This contains the schema for pack-specific configuration items.
-5. Move `template.yaml.example` to `<pack_name>.yaml.example`, and add some example
-   configuration. This will get validated against your configuration schema.
-6. Add your actions, sensors and workflows. Need code ideas? Check [Github](https://github.com/StackStorm-Exchange/)!
-8. Test your pack, and when it's ready, submit to [exchange-incubator](https://github.com/StackStorm-Exchange/exchange-incubator)
+Check example of webhook for usages.
 
-Any problems or questions? Check the [docs](https://docs.stackstorm.com/packs.html) or hit us up on [Slack](https://stackstorm.com/community-signup)
+### Actions
+
+#### take_task
+
+Change status to InProgress for `task_id`.
+
+#### complte_task
+
+Change status to Completed for `task_id`.
+
+#### *_by_name
+
+Look for `task_name` in `case_id`.
+
+#### promote_alert_to_case
+
+Create case from `alert_id` with `case_template`.
+
+#### create_task_log
+
+Create log in `task_id`.
+
+#### run_analyzer
+
+Run `analyzer_name` on `artifact_id` of `case_id`.
+
+An optional `linked_task_name` parameter force to verify if a task exists in this case with this name and link the created job to this task.
+
+#### run_analyzer_on_data_type
+
+Same as before but run on every artifacts of `data_type` for `case_id`.
+
+#### *_task_by_job_id
+
+Works only if `job_id` was linked to a `task_id` during `run_analyzer`.

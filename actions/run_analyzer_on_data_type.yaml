@@ -1,18 +1,18 @@
 ---
-  name: "run_analyzer"
+  name: "run_analyzer_on_data_type"
   runner_type: "python-script"
   description: "This run analyzer on artifact for the case"
   enabled: true
-  entry_point: "run_analyzer.py"
+  entry_point: "run_analyzer_on_data_type.py"
   parameters:
     case_id:
       type: "string"
       description: "Case id to retrieve artifact"
       required: true
       position: 0
-    artifact_id:
+    data_type:
       type: "string"
-      description: "Artifact id to run analyzer on"
+      description: "Artifact data_type to run analyzer on"
       required: true
       position: 1
     analyzer_name:

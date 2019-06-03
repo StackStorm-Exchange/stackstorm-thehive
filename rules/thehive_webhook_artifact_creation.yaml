@@ -1,0 +1,29 @@
+---
+  name: "thehive_webhook_artifact_creation"
+  pack: "thehive"
+  description: "Receive TheHive information from https://github.com/TheHive-Project/TheHiveDocs/blob/master/admin/webhooks.md"
+  enabled: false
+
+  trigger:
+    type: "core.st2.webhook"
+    parameters:
+      url: "thehive"
+
+  criteria:
+    trigger.body.operation:
+      type: "eq"
+      pattern : "Creation"
+    trigger.body.objectType:
+      type: "eq"
+      pattern : "case_artifact"
+    trigger.body.object.dataType:
+      type: "eq"
+      pattern : "ip"
+
+  action:
+    ref: "thehive.run_analyzer"
+    parameters:
+      case_id: "{{ trigger.body.object._parent }}"
+      artifact_id: "{{ trigger.body.object._id }}"
+      analyzer_name: "Abuse_Finder_2_0"
+      linked_task_name: "abuse finder on ip"

@@ -1,17 +1,17 @@
 ---
-  name: "take_task"
+  name: "complete_task"
   runner_type: "python-script"
-  description: "This switch status task to InProgress"
+  description: "This switch status task to Completed"
   enabled: true
   entry_point: "change_status_task.py"
   parameters:
     task_id:
       type: "string"
-      description: "Task id to take"
+      description: "Task id to complete"
       required: true
       position: 0
     status:
       type: "string"
       position: 1
       immutable: true
-      default: 'InProgress'
+      default: Completed
