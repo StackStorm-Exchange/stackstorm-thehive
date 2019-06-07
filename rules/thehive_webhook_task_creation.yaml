@@ -1,0 +1,26 @@
+---
+  name: "thehive_webhook_task_creation"
+  pack: "thehive"
+  description: "Receive TheHive information from https://github.com/TheHive-Project/TheHiveDocs/blob/master/admin/webhooks.md"
+  enabled: false
+
+  trigger:
+    type: "core.st2.webhook"
+    parameters:
+      url: "thehive"
+
+  criteria:
+    trigger.body.operation:
+      type: "eq"
+      pattern : "Creation"
+    trigger.body.objectType:
+      type: "eq"
+      pattern : "case_task"
+    trigger.body.object.owner:
+      type: "eq"
+      pattern : "bot"
+
+  action:
+    ref: "thehive.take_task"
+    parameters:
+      task_id: "{{ trigger.body.object._id }}"

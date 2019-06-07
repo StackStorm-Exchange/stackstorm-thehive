@@ -1,0 +1,18 @@
+---
+  name: "create_task_log_by_job_id"
+  runner_type: "python-script"
+  description: "This create log in task"
+  enabled: true
+  entry_point: "create_task_log_by_job_id.py"
+  parameters:
+    job_id:
+      type: "string"
+      description: "Job id to complete linked task id"
+      required: true
+      position: 0
+    log:
+      type: "string"
+      description: "Log message"
+      required: true
+      position: 1
+

@@ -1,0 +1,22 @@
+---
+  name: "complete_task_by_name"
+  runner_type: "python-script"
+  description: "This switch status task to Completed"
+  enabled: true
+  entry_point: "change_status_task_by_name.py"
+  parameters:
+    case_id:
+      type: "string"
+      description: "Case id to look for task name"
+      required: true
+      position: 0
+    task_name:
+      type: "string"
+      description: "Task name to take"
+      required: true
+      position: 1
+    status:
+      type: "string"
+      position: 2
+      immutable: true
+      default: Completed

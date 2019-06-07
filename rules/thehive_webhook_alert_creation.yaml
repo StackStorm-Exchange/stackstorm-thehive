@@ -1,0 +1,24 @@
+---
+  name: "thehive_webhook_alert_creation"
+  pack: "thehive"
+  description: "Receive TheHive information from https://github.com/TheHive-Project/TheHiveDocs/blob/master/admin/webhooks.md"
+  enabled: false
+
+  trigger:
+    type: "core.st2.webhook"
+    parameters:
+      url: "thehive"
+
+  criteria:
+    trigger.body.operation:
+        type: "eq"
+        pattern : "Creation"
+    trigger.body.objectType:
+        type: "eq"
+        pattern : "alert"
+
+  action:
+    ref: "thehive.promote_alert_to_case"
+    parameters:
+      alert_id: "{{ trigger.body.object._id }}"
+      case_template: "{{ trigger.body.object.caseTemplate }}"

@@ -1,5 +1,6 @@
 # Change Log
 
-## 0.1.0
+## 1.0.0
 
-- First release 
+- First release
+- Second release abandon sensor to use TheHive webhook instead.

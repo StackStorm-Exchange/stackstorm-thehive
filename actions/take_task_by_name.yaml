@@ -1,17 +1,22 @@
 ---
-  name: "take_task"
+  name: "take_task_by_name"
   runner_type: "python-script"
   description: "This switch status task to InProgress"
   enabled: true
-  entry_point: "change_status_task.py"
+  entry_point: "change_status_task_by_name.py"
   parameters:
-    task_id:
+    case_id:
       type: "string"
-      description: "Task id to take"
+      description: "Case id to look for task name"
       required: true
       position: 0
+    task_name:
+      type: "string"
+      description: "Task name to take"
+      required: true
+      position: 1
     status:
       type: "string"
-      position: 1
+      position: 2
       immutable: true
       default: 'InProgress'
