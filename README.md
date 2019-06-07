@@ -1,6 +1,6 @@
 # TheHive pack for StackStorm
 
-This is a bunch of actions to automate TheHive alerts/cases/jobs processing.
+This is a bunch of actions to automate [TheHive](https://thehive-project.org) alerts/cases/jobs processing.
 
 ## How to Use
 
@@ -12,7 +12,7 @@ Check example of webhook for usages.
 
 Change status to InProgress for `task_id`.
 
-#### complte_task
+#### complete_task
 
 Change status to Completed for `task_id`.
 
