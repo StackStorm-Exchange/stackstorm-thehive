@@ -1,19 +1,7 @@
-import requests
-from thehive4py.api import TheHiveApi
+from thehive4pyextended import TheHiveApiExtended
 from st2common.runners.base_action import Action
 from thehive4py.models import CaseTask
-from thehive4py.exceptions import CaseTaskException
 from thehive4py.query import Eq
-
-
-class TheHiveApiExtended(TheHiveApi):
-    def get_task(self, task_id):
-        req = self.url + "/api/case/task/{}".format(task_id)
-        try:
-            return requests.get(req, proxies=self.proxies, auth=self.auth, verify=self.cert)
-        except requests.exceptions.RequestException as e:
-            raise CaseTaskException("Case task logs search error: {}".format(e))
-
 
 __all__ = [
     'ChangeStatusTaskByNameAction'
